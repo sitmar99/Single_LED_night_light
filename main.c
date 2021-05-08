@@ -56,19 +56,19 @@ int main()
 
     while (1)
     {
-        uint8_t x = readLED();
-        uint8_t s[4];
-        sprintf(s, "%u", x);
-        USART_Transmit(s);
-        USART_Transmit("\n");
+        // uint8_t x = readLED();
+        // uint8_t s[4];
+        // sprintf(s, "%u", x);
+        // USART_Transmit(s);
+        // USART_Transmit("\n");
 
-        // DDRC = 0x00;
-        // PORTC = 0x00;
-        // if (readLED() < 60)
-        // {
-        //     DDRC = 0xFF;
-        //     PORTC = 0xFF;
-        //     _delay_ms(1000);
-        // }
+        DDRC = 0x00;
+        PORTC = 0x00;
+        if (readLED() < 50)
+        {
+            DDRC = 0xFF;
+            PORTC = 0xFF;
+            _delay_ms(1000);
+        }
     }
 }
